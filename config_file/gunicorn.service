@@ -1,0 +1,19 @@
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=nova
+Group=www-data
+WorkingDirectory=/home/nova/WorkSpace/MMjango
+ExecStart=/home/nova/miniforge3/envs/jango/bin/gunicorn \
+        --access-logfile access.log \
+        --error-logfile error.log \
+        --workers 3 \
+        --bind unix:/run/gunicorn.sock \
+        MMjango.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+
