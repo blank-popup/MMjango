@@ -8,6 +8,7 @@ User=nova
 Group=www-data
 WorkingDirectory=/home/nova/WorkSpace/MMjango
 ExecStart=/home/nova/miniforge3/envs/jango/bin/gunicorn \
+        --log-level debug \
         --access-logfile access.log \
         --error-logfile error.log \
         --workers 3 \
@@ -16,4 +17,3 @@ ExecStart=/home/nova/miniforge3/envs/jango/bin/gunicorn \
 
 [Install]
 WantedBy=multi-user.target
-
