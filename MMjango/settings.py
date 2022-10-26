@@ -37,6 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # ### ===== ADD ========
+    # 'rest_framework',
+    # 'snippets',
+    # ### ==================
+
+    ### ===== EDIT ========
+    'rest_framework',
+    'MMjango.snippets',
+    ### ==================
 ]
 
 MIDDLEWARE = [
